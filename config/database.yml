@@ -33,4 +33,4 @@ production:
   <<: *default
   database: manage_calendar_production
   username: manage_calendar
-  password: 123456
+  password: "123456"
