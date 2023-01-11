@@ -16,6 +16,7 @@ test:
 
 production:
   <<: *default
-  database: manage_calendar_production
-  username: manage_calendar
-  password: 123456
+  # database: manage_calendar_production
+  # username: manage_calendar
+  # password: 123456
+  url: <%= ENV['DATABASE_URL'] %>
