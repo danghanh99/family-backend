@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    environment: 
+      POSTGRES_HOST_AUTH_METHOD: trust
+    image: postgres
+    volumes:
+      - ./tmp/postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+  web:
+    depends_on:
+      - 'db'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mrabets/webphotos-api
+    command: /bin/bash -c "rm -f /tmp/server.pid && bundle exec rails server -b 0.0.0.0 -P /tmp/server.pid"
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app

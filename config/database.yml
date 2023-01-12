@@ -2,21 +2,22 @@ default: &default
   adapter: postgresql
   encoding: unicode
   port: 5432
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: manage_calendar_development
+  username: family_be_development
+  password: 123456
+  host: localhost
 
 test:
   <<: *default
-  database: manage_calendar_test
+  username: family_be_test
+  password: 123456
+  host: localhost
 
 production:
   <<: *default
-  database: manage_calendar_production
-  username: manage_calendar
+  database: family_be_production
+  username: family_be
   password: 123456
-  # url: <%= ENV['DATABASE_URL'] %>
