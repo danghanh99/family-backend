@@ -8,13 +8,15 @@ development:
   <<: *default
   username: family_be_development
   password: 123456
-  host: localhost
+  host: db
+  database: family_development_db
 
 test:
   <<: *default
-  username: family_be_test
+  username: family_be_development
   password: 123456
-  host: localhost
+  host: db
+  database: family_test_db
 
 production:
   <<: *default
