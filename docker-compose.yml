@@ -17,6 +17,6 @@ services:
     image: mrabets/webphotos-api
     command: /bin/bash -c "rm -f /tmp/server.pid && bundle exec rails server -b 0.0.0.0 -P /tmp/server.pid"
     ports:
-      - 3000:3000
+      - 4001:3000
     volumes:
       - .:/app
